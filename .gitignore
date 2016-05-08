@@ -1,0 +1,4 @@
+build
+localbuildsettings.py
+*.pyc
+*.swp
