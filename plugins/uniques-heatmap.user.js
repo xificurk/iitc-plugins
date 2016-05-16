@@ -93,6 +93,9 @@ var setup = function() {
     return;
   }
 
+  // Fix Heatmap layer z-index
+  $("<style>").prop("type", "text/css").html('canvas.leaflet-heatmap-layer {z-index: 1;}').appendTo("head");
+
   window.addPortalHighlighter('Hide portals', window.plugin.uniquesHeatmap.hidePortalsHightlighter);
 
   // Pioneer heatmap
