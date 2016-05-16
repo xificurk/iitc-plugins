@@ -2,11 +2,11 @@
 // @id             iitc-plugin-uniques-heatmap@xificurk
 // @name           IITC plugin: Unique visits/captures heatmap
 // @category       Layer
-// @version        0.1.0.20160512.230355
+// @version        0.1.1.20160516.82345
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/uniques-heatmap.meta.js
 // @downloadURL    https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/uniques-heatmap.user.js
-// @description    [xificurk-2016-05-12-230355] Display heatmap of all portals that the player did NOT visit/capture. Requires uniques plugin.
+// @description    [xificurk-2016-05-16-082345] Display heatmap of all portals that the player did NOT visit/capture. Requires uniques plugin.
 // @include        https://www.ingress.com/intel*
 // @include        http://www.ingress.com/intel*
 // @match          https://www.ingress.com/intel*
@@ -26,7 +26,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'xificurk';
-plugin_info.dateTimeVersion = '20160512.230355';
+plugin_info.dateTimeVersion = '20160516.82345';
 plugin_info.pluginId = 'uniques-heatmap';
 //END PLUGIN AUTHORS NOTE
 
@@ -72,14 +72,14 @@ window.plugin.uniquesHeatmap.updateHeatmap = function(layer) {
   // as this is called every time layers are toggled, there's no point in doing it when the layer is off
   if(!map.hasLayer(layer)) {
     if(window._current_highlighter === 'Hide portals' && !map.hasLayer(window.plugin.uniquesHeatmap.explorerHeatLayer) && !map.hasLayer(window.plugin.uniquesHeatmap.pioneerHeatLayer)) {
-      window.changePortalHighlights(window.plugin.uniquesHeatmap.original_highlighter);
+      $('#portal_highlight_select').val(window.plugin.uniquesHeatmap.original_highlighter).trigger('change');
     }
     return;
   }
 
   if(window._current_highlighter !== 'Hide portals') {
     window.plugin.uniquesHeatmap.original_highlighter = window._current_highlighter;
-    window.changePortalHighlights('Hide portals');
+    $('#portal_highlight_select').val('Hide portals').trigger('change');
   }
 
   var points = [];
@@ -114,6 +114,9 @@ var setup = function() {
     alert("'Portal Highlighter Uniques Opacity' requires 'uniques'");
     return;
   }
+
+  // Fix Heatmap layer z-index
+  $("<style>").prop("type", "text/css").html('canvas.leaflet-heatmap-layer {z-index: 1;}').appendTo("head");
 
   window.addPortalHighlighter('Hide portals', window.plugin.uniquesHeatmap.hidePortalsHightlighter);
 
