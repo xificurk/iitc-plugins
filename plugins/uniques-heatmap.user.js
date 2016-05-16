@@ -50,14 +50,14 @@ window.plugin.uniquesHeatmap.updateHeatmap = function(layer) {
   // as this is called every time layers are toggled, there's no point in doing it when the layer is off
   if(!map.hasLayer(layer)) {
     if(window._current_highlighter === 'Hide portals' && !map.hasLayer(window.plugin.uniquesHeatmap.explorerHeatLayer) && !map.hasLayer(window.plugin.uniquesHeatmap.pioneerHeatLayer)) {
-      window.changePortalHighlights(window.plugin.uniquesHeatmap.original_highlighter);
+      $('#portal_highlight_select').val(window.plugin.uniquesHeatmap.original_highlighter).trigger('change');
     }
     return;
   }
 
   if(window._current_highlighter !== 'Hide portals') {
     window.plugin.uniquesHeatmap.original_highlighter = window._current_highlighter;
-    window.changePortalHighlights('Hide portals');
+    $('#portal_highlight_select').val('Hide portals').trigger('change');
   }
 
   var points = [];
