@@ -2,7 +2,7 @@
 // @id             iitc-plugin-uniques-heatmap@xificurk
 // @name           IITC plugin: Unique visits/captures heatmap
 // @category       Layer
-// @version        0.1.1.@@DATETIMEVERSION@@
+// @version        0.1.2.@@DATETIMEVERSION@@
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      @@UPDATEURL@@
 // @downloadURL    @@DOWNLOADURL@@
@@ -20,9 +20,6 @@
 
 @@PLUGINSTART@@
 //PLUGIN START ////////////////////////////////////////////////////////
-
-// Load leaflet-heat.js
-@@INCLUDERAW:external/leaflet-heat.js@@
 
 
 //use own namespace for plugin
@@ -88,6 +85,10 @@ window.plugin.uniquesHeatmap.delayedUpdateHeatmap = function(layer, wait) {
 
 
 var setup = function() {
+  // Load leaflet-heat.js
+  // Note: It seems that on mobile the plugin is loaded before leaflet code, so we need to load leaflet-heat.js here in setup.
+  @@INCLUDERAW:external/leaflet-heat.js@@
+
   if(window.plugin.uniques === undefined) {
     alert("'Portal Highlighter Uniques Opacity' requires 'uniques'");
     return;
