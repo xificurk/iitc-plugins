@@ -31,3 +31,8 @@ See the example heatmaps below and compare it with [standard highlighter](images
 ### Pioneer heatmap
 
 ![Pioneer heatmap](images/uniques-heatmap-pioneer.png?raw=true "Pioneer heatmap")
+
+
+## [Seznam map tiles](https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/basemap-seznam.user.js)
+
+Base and hiking map tiles from [Seznam](http://mapy.cz) (covers Czech Republic only).
