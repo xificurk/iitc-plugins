@@ -2,11 +2,11 @@
 // @id             iitc-plugin-basemap-seznam@xificurk
 // @name           IITC plugin: Seznam map tiles
 // @category       Map Tiles
-// @version        0.1.1.20170414.123747
+// @version        0.1.2.20180311.161817
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/basemap-seznam.meta.js
 // @downloadURL    https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/basemap-seznam.user.js
-// @description    [xificurk-2017-04-14-123747] Seznam map tiles.
+// @description    [xificurk-2018-03-11-161817] Seznam map tiles.
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*

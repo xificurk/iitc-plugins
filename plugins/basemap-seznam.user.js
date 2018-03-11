@@ -2,7 +2,7 @@
 // @id             iitc-plugin-basemap-seznam@xificurk
 // @name           IITC plugin: Seznam map tiles
 // @category       Map Tiles
-// @version        0.1.1.@@DATETIMEVERSION@@
+// @version        0.1.2.@@DATETIMEVERSION@@
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      @@UPDATEURL@@
 // @downloadURL    @@DOWNLOADURL@@
@@ -32,7 +32,7 @@ var setup = function() {
     maxZoom: 22
   });
 
-  var hikingLayer = new L.TileLayer('http://m{s}.mapserver.mapy.cz/turist_trail_bike-m/{z}-{x}-{y}.png', {
+  var hikingLayer = new L.TileLayer('http://m{s}.mapserver.mapy.cz/turist-m/{z}-{x}-{y}.png', {
     attribution: attribution,
     subdomains: '1234',
     maxNativeZoom: 18,
