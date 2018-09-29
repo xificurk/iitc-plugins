@@ -1,7 +1,7 @@
 # Unofficial IITC plugins
 
 
-## [Highlight unique visits/captures using opacity](https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/portal-highlighter-uniques-opacity.user.js)
+## Highlight unique visits/captures using opacity [[Install](https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/portal-highlighter-uniques-opacity.user.js)]
 
 Use stroke and fill opacity to denote player's unique visits and captures. Requires uniques plugin.
 
@@ -16,7 +16,7 @@ See the example below and compare it with [standard highlighter](images/uniques.
 ![Uniques opacity plugin highlighting](images/portal-highlighter-uniques-opacity.png?raw=true "Uniques opacity plugin highlighting")
 
 
-## [Unique visits/captures heatmap](https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/uniques-heatmap.user.js)
+## Unique visits/captures heatmap [[Install](https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/uniques-heatmap.user.js)]
 
 Display heatmap of all portals that the player did NOT visit/capture. Requires uniques plugin.
 
@@ -33,6 +33,6 @@ See the example heatmaps below and compare it with [standard highlighter](images
 ![Pioneer heatmap](images/uniques-heatmap-pioneer.png?raw=true "Pioneer heatmap")
 
 
-## [Seznam map tiles](https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/basemap-seznam.user.js)
+## Seznam map tiles [[Install](https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/basemap-seznam.user.js)]
 
 Base and hiking map tiles from [Seznam](http://mapy.cz).
