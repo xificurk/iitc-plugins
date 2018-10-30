@@ -2,11 +2,15 @@
 // @id             iitc-plugin-basemap-seznam@xificurk
 // @name           IITC plugin: Seznam map tiles
 // @category       Map Tiles
-// @version        0.1.2.20180311.161817
+// @version        0.1.2.20181030.62442
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/basemap-seznam.meta.js
 // @downloadURL    https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/basemap-seznam.user.js
-// @description    [xificurk-2018-03-11-161817] Seznam map tiles.
+// @description    [xificurk-2018-10-30-062442] Seznam map tiles.
+// @include        https://intel.ingress.com/*
+// @include        http://intel.ingress.com/*
+// @match          https://intel.ingress.com/*
+// @match          http://intel.ingress.com/*
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -26,7 +30,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'xificurk';
-plugin_info.dateTimeVersion = '20180311.161817';
+plugin_info.dateTimeVersion = '20181030.62442';
 plugin_info.pluginId = 'basemap-seznam';
 //END PLUGIN AUTHORS NOTE
 

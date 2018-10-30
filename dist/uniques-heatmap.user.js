@@ -2,11 +2,15 @@
 // @id             iitc-plugin-uniques-heatmap@xificurk
 // @name           IITC plugin: Unique visits/captures heatmap
 // @category       Layer
-// @version        0.1.3.20170414.123747
+// @version        0.1.3.20181030.62442
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/uniques-heatmap.meta.js
 // @downloadURL    https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/uniques-heatmap.user.js
-// @description    [xificurk-2017-04-14-123747] Display heatmap of all portals that the player did NOT visit/capture. Requires uniques plugin.
+// @description    [xificurk-2018-10-30-062442] Display heatmap of all portals that the player did NOT visit/capture. Requires uniques plugin.
+// @include        https://intel.ingress.com/*
+// @include        http://intel.ingress.com/*
+// @match          https://intel.ingress.com/*
+// @match          http://intel.ingress.com/*
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
 // @match          https://*.ingress.com/intel*
@@ -26,7 +30,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'xificurk';
-plugin_info.dateTimeVersion = '20170414.123747';
+plugin_info.dateTimeVersion = '20181030.62442';
 plugin_info.pluginId = 'uniques-heatmap';
 //END PLUGIN AUTHORS NOTE
 
