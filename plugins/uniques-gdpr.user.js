@@ -190,6 +190,8 @@ window.plugin.uniquesGdpr.mergeWithUniques = function() {
     }
   });
   changes.sort();
+  
+  window.plugin.uniques.storeLocal('uniques');
 
   if(window.plugin.sync) {
     window.plugin.sync.updateMap('uniques', 'uniques', Object.keys(window.plugin.uniques.uniques));
