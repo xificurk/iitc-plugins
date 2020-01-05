@@ -2,7 +2,7 @@
 // @id             iitc-plugin-basemap-seznam@xificurk
 // @name           IITC plugin: Seznam map tiles
 // @category       Map Tiles
-// @version        0.1.2.@@DATETIMEVERSION@@
+// @version        0.1.3.@@DATETIMEVERSION@@
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      @@UPDATEURL@@
 // @downloadURL    @@DOWNLOADURL@@
@@ -27,16 +27,16 @@
 
 
 var setup = function() {
-  var attribution = '<a href="http://mapy.cz"><img src="http://mapy.cz/img/logo-small.svg"/></a>© Seznam.cz,a.s, © Přispěvatelé <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, © NASA';
+  var attribution = '<a href="https://mapy.cz"><img src="https://mapy.cz/img/logo-small.svg"/></a>© Seznam.cz,a.s, © Přispěvatelé <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, © NASA';
 
-  var baseLayer = new L.TileLayer('http://m{s}.mapserver.mapy.cz/base-m/{z}-{x}-{y}.png', {
+  var baseLayer = new L.TileLayer('https://m{s}.mapserver.mapy.cz/base-m/{z}-{x}-{y}.png', {
     attribution: attribution,
     subdomains: '1234',
     maxNativeZoom: 18,
     maxZoom: 22
   });
 
-  var hikingLayer = new L.TileLayer('http://m{s}.mapserver.mapy.cz/turist-m/{z}-{x}-{y}.png', {
+  var hikingLayer = new L.TileLayer('https://m{s}.mapserver.mapy.cz/turist-m/{z}-{x}-{y}.png', {
     attribution: attribution,
     subdomains: '1234',
     maxNativeZoom: 18,
