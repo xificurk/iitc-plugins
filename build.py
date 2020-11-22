@@ -98,7 +98,7 @@ script.appendChild(document.createTextNode('('+ wrapper +')('+JSON.stringify(inf
 
 
 def readfile(fn):
-    with io.open(fn, 'Ur', encoding='utf8') as f:
+    with io.open(fn, 'r', encoding='utf8') as f:
         return f.read()
 
 def loaderString(var):
