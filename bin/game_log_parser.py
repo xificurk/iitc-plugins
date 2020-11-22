@@ -25,7 +25,7 @@ def parse_game_log(game_log_path):
     visited = set()
     captured = set()
 
-    with open(game_log_path) as fp:
+    with open(game_log_path, "r", encoding="utf-8") as fp:
         header = fp.readline().rstrip("\n").split("\t")
         if tuple(header) != ("Event Time", "Event Lat", "Event Lng", "Tracker Trigger", "Comments"):
             raise RuntimeError("Malformed data in game_log.tsv")
