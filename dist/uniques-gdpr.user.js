@@ -2,11 +2,11 @@
 // @id             iitc-plugin-uniques-gdpr@xificurk
 // @name           IITC plugin: show uniques visit/captures based on GDPR game_log
 // @category       Misc
-// @version        0.1.0.20181030.62442
+// @version        0.1.0.20201122.121942
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/uniques-gdpr.meta.js
 // @downloadURL    https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/uniques-gdpr.user.js
-// @description    [xificurk-2018-10-30-062442] Show uniques visit/captures based on GDPR game_log
+// @description    [xificurk-2020-11-22-121942] Show uniques visit/captures based on GDPR game_log
 // @include        https://intel.ingress.com/*
 // @include        http://intel.ingress.com/*
 // @match          https://intel.ingress.com/*
@@ -30,7 +30,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'xificurk';
-plugin_info.dateTimeVersion = '20181030.62442';
+plugin_info.dateTimeVersion = '20201122.121942';
 plugin_info.pluginId = 'uniques-gdpr';
 //END PLUGIN AUTHORS NOTE
 
@@ -202,6 +202,8 @@ window.plugin.uniquesGdpr.mergeWithUniques = function() {
     }
   });
   changes.sort();
+  
+  window.plugin.uniques.storeLocal('uniques');
 
   if(window.plugin.sync) {
     window.plugin.sync.updateMap('uniques', 'uniques', Object.keys(window.plugin.uniques.uniques));
