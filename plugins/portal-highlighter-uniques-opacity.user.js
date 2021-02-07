@@ -32,8 +32,17 @@ window.plugin.portalHighlighterUniquesOpacity = function () {};
 
 window.plugin.portalHighlighterUniquesOpacity.highlighter = {
   highlight: function(data) {
-    var guid = data.portal.options.ent[0];
-    var uniqueInfo = window.plugin.uniques.uniques[guid];
+    var portalData = data.portal.options.ent[2]
+
+    if (portalData[18]) {
+      var visited = ((portalData[18] & 0b1) === 1)
+      var captured = ((portalData[18] & 0b10) === 2)
+
+      var uniqueInfo = {
+        captured,
+        visited
+      }
+    }
 
     var style = {};
 
@@ -54,20 +63,11 @@ window.plugin.portalHighlighterUniquesOpacity.highlighter = {
     }
 
     data.portal.setStyle(style);
-  },
-
-  setSelected: function(active) {
-    window.plugin.uniques.isHighlightActive = active;
   }
 }
 
 
 var setup = function() {
-  if(window.plugin.uniques === undefined) {
-    alert("'Portal Highlighter Uniques Opacity' requires 'uniques'");
-    return;
-  }
-
   window.addPortalHighlighter('Uniques (opacity)', window.plugin.portalHighlighterUniquesOpacity.highlighter);
 }
 
