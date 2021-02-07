@@ -2,11 +2,11 @@
 // @id             iitc-plugin-uniques-heatmap@xificurk
 // @name           IITC plugin: Unique visits/captures heatmap
 // @category       Layer
-// @version        0.2.0.20210207.162435
+// @version        0.2.1.20210207.174711
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/uniques-heatmap.meta.js
 // @downloadURL    https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/uniques-heatmap.user.js
-// @description    [xificurk-2021-02-07-162435] Display heatmap of all portals that the player did NOT visit/capture. Requires uniques plugin.
+// @description    [xificurk-2021-02-07-174711] Display heatmap of all portals that the player did NOT visit/capture. Requires uniques plugin.
 // @include        https://intel.ingress.com/*
 // @include        http://intel.ingress.com/*
 // @match          https://intel.ingress.com/*
@@ -30,7 +30,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'xificurk';
-plugin_info.dateTimeVersion = '20210207.162435';
+plugin_info.dateTimeVersion = '20210207.174711';
 plugin_info.pluginId = 'uniques-heatmap';
 //END PLUGIN AUTHORS NOTE
 
@@ -81,8 +81,8 @@ window.plugin.uniquesHeatmap.updateHeatmap = function(layer) {
 
     if (portalData[18]) {
       uniqueInfo = {
-        captured: ((portalData[18] & 0b10) === 2),
-        visited: ((portalData[18] & 0b1) === 1)
+        captured: ((portalData[18] & 0b10) !== 0),
+        visited: ((portalData[18] & 0b11) !== 0)
       };
     }
 

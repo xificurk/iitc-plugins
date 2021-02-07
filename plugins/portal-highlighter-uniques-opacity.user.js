@@ -2,7 +2,7 @@
 // @id             iitc-plugin-portal-highlighter-uniques-opacity@xificurk
 // @name           IITC plugin: Highlight unique visits/captures using opacity
 // @category       Highlighter
-// @version        0.2.0.@@DATETIMEVERSION@@
+// @version        0.2.1.@@DATETIMEVERSION@@
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      @@UPDATEURL@@
 // @downloadURL    @@DOWNLOADURL@@
@@ -37,8 +37,8 @@ window.plugin.portalHighlighterUniquesOpacity.highlighter = {
 
     if (portalData[18]) {
       uniqueInfo = {
-        captured: ((portalData[18] & 0b10) === 2),
-        visited: ((portalData[18] & 0b1) === 1)
+        captured: ((portalData[18] & 0b10) !== 0),
+        visited: ((portalData[18] & 0b11) !== 0)
       };
     }
 
