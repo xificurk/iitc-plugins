@@ -2,7 +2,7 @@
 // @id             iitc-plugin-uniques-heatmap@xificurk
 // @name           IITC plugin: Unique visits/captures heatmap
 // @category       Layer
-// @version        0.1.3.@@DATETIMEVERSION@@
+// @version        0.2.0.@@DATETIMEVERSION@@
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      @@UPDATEURL@@
 // @downloadURL    @@DOWNLOADURL@@
@@ -64,7 +64,16 @@ window.plugin.uniquesHeatmap.updateHeatmap = function(layer) {
   var points = [];
   for(var guid in window.portals) {
     var p = window.portals[guid];
-    var uniqueInfo = window.plugin.uniques.uniques[guid];
+    var portalData = p.options.ent[2]
+    var uniqueInfo = null;
+
+    if (portalData[18]) {
+      uniqueInfo = {
+        captured: ((portalData[18] & 0b10) === 2),
+        visited: ((portalData[18] & 0b1) === 1)
+      };
+    }
+
     if(p._map && (!uniqueInfo || !uniqueInfo.visited || (layer === window.plugin.uniquesHeatmap.pioneerHeatLayer && !uniqueInfo.captured))) {
       points.push(p.getLatLng());
     }
@@ -92,11 +101,6 @@ var setup = function() {
   // Load leaflet-heat.js
   // Note: It seems that on mobile the plugin is loaded before leaflet code, so we need to load leaflet-heat.js here in setup.
   @@INCLUDERAW:external/leaflet-heat.js@@
-
-  if(window.plugin.uniques === undefined) {
-    alert("'Portal Highlighter Uniques Opacity' requires 'uniques'");
-    return;
-  }
 
   // Fix Heatmap layer z-index
   $("<style>").prop("type", "text/css").html('canvas.leaflet-heatmap-layer {z-index: 1;}').appendTo("head");

@@ -22,7 +22,7 @@ See the example below and compare it with [standard highlighter](images/uniques.
 
 ## Unique visits/captures heatmap [[Install](https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/uniques-heatmap.user.js)]
 
-Display heatmap of all portals that the player did NOT visit/capture. Requires uniques plugin.
+Display heatmap of all portals that the player did NOT visit/capture. Uses NIA intel visits/captures data.
 
 This plugin adds two additional layers - Explorer heatmap (unvisited portals) and Pioneer heatmap (uncaptured portals), it's great for identifying portal-dense areas that you did not visit/capture.
 
