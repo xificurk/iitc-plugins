@@ -36,7 +36,7 @@ Zoom in on the area you're interested in, wait for the portals to load, and then
 
 ## Highlight unique visits/captures using opacity [[Install](https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/portal-highlighter-uniques-opacity.user.js)]
 
-Use stroke and fill opacity to denote player's unique visits and captures. Requires uniques plugin.
+Use stroke and fill opacity to denote player's unique visits and captures. Uses NIA intel visits/captures data.
 
 The standard highlighter from uniques plugin gives you clear overview of un/visited/captured portals, but I do not like the fact that it kind of masks the state of the battlefield, especially when you're zoomed out.
 

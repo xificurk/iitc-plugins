@@ -2,11 +2,11 @@
 // @id             iitc-plugin-portal-highlighter-uniques-opacity@xificurk
 // @name           IITC plugin: Highlight unique visits/captures using opacity
 // @category       Highlighter
-// @version        0.1.1.20181030.62442
+// @version        0.2.0.20210207.155014
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/portal-highlighter-uniques-opacity.meta.js
 // @downloadURL    https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/portal-highlighter-uniques-opacity.user.js
-// @description    [xificurk-2018-10-30-062442] Use stroke and fill opacity to denote player's unique visits and captures. Requires uniques plugin.
+// @description    [xificurk-2021-02-07-155014] Use stroke and fill opacity to denote player's unique visits and captures. Requires uniques plugin.
 // @include        https://intel.ingress.com/*
 // @include        http://intel.ingress.com/*
 // @match          https://intel.ingress.com/*
@@ -30,7 +30,7 @@ if(typeof window.plugin !== 'function') window.plugin = function() {};
 //PLUGIN AUTHORS: writing a plugin outside of the IITC build environment? if so, delete these lines!!
 //(leaving them in place might break the 'About IITC' page or break update checks)
 plugin_info.buildName = 'xificurk';
-plugin_info.dateTimeVersion = '20181030.62442';
+plugin_info.dateTimeVersion = '20210207.155014';
 plugin_info.pluginId = 'portal-highlighter-uniques-opacity';
 //END PLUGIN AUTHORS NOTE
 
@@ -44,8 +44,15 @@ window.plugin.portalHighlighterUniquesOpacity = function () {};
 
 window.plugin.portalHighlighterUniquesOpacity.highlighter = {
   highlight: function(data) {
-    var guid = data.portal.options.ent[0];
-    var uniqueInfo = window.plugin.uniques.uniques[guid];
+    var portalData = data.portal.options.ent[2]
+    var uniqueInfo = null;
+
+    if (portalData[18]) {
+      uniqueInfo = {
+        captured: ((portalData[18] & 0b10) === 2),
+        visited: ((portalData[18] & 0b1) === 1)
+      };
+    }
 
     var style = {};
 
@@ -66,20 +73,11 @@ window.plugin.portalHighlighterUniquesOpacity.highlighter = {
     }
 
     data.portal.setStyle(style);
-  },
-
-  setSelected: function(active) {
-    window.plugin.uniques.isHighlightActive = active;
   }
 }
 
 
 var setup = function() {
-  if(window.plugin.uniques === undefined) {
-    alert("'Portal Highlighter Uniques Opacity' requires 'uniques'");
-    return;
-  }
-
   window.addPortalHighlighter('Uniques (opacity)', window.plugin.portalHighlighterUniquesOpacity.highlighter);
 }
 

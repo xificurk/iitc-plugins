@@ -2,7 +2,7 @@
 // @id             iitc-plugin-portal-highlighter-uniques-opacity@xificurk
 // @name           IITC plugin: Highlight unique visits/captures using opacity
 // @category       Highlighter
-// @version        0.1.1.@@DATETIMEVERSION@@
+// @version        0.2.0.@@DATETIMEVERSION@@
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      @@UPDATEURL@@
 // @downloadURL    @@DOWNLOADURL@@
