@@ -33,15 +33,13 @@ window.plugin.portalHighlighterUniquesOpacity = function () {};
 window.plugin.portalHighlighterUniquesOpacity.highlighter = {
   highlight: function(data) {
     var portalData = data.portal.options.ent[2]
+    var uniqueInfo = null;
 
     if (portalData[18]) {
-      var visited = ((portalData[18] & 0b1) === 1)
-      var captured = ((portalData[18] & 0b10) === 2)
-
-      var uniqueInfo = {
-        captured,
-        visited
-      }
+      uniqueInfo = {
+        captured: ((portalData[18] & 0b10) === 2),
+        visited: ((portalData[18] & 0b1) === 1)
+      };
     }
 
     var style = {};
