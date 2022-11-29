@@ -29,14 +29,14 @@
 var setup = function() {
   var attribution = '<a href="https://mapy.cz"><img src="https://mapy.cz/img/logo-small.svg"/></a>© Seznam.cz,a.s, © Přispěvatelé <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, © NASA';
 
-  var baseLayer = new L.TileLayer('https://m{s}.mapserver.mapy.cz/base-m/{z}-{x}-{y}.png', {
+  var baseLayer = new L.TileLayer('https://mapserver.mapy.cz/base-m/{z}-{x}-{y}.png', {
     attribution: attribution,
     subdomains: '1234',
     maxNativeZoom: 18,
     maxZoom: 22
   });
 
-  var hikingLayer = new L.TileLayer('https://m{s}.mapserver.mapy.cz/turist-m/{z}-{x}-{y}.png', {
+  var hikingLayer = new L.TileLayer('https://mapserver.mapy.cz/turist-m/{z}-{x}-{y}.png', {
     attribution: attribution,
     subdomains: '1234',
     maxNativeZoom: 18,
