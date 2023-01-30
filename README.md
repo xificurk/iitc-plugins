@@ -1,10 +1,6 @@
 # Unofficial IITC plugins
 
 
-## Seznam map tiles [[Install](https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/basemap-seznam.user.js)]
-
-Base and hiking map tiles from [Seznam](http://mapy.cz).
-
 ## Highlight unique visits/captures using opacity [[Install](https://raw.githubusercontent.com/xificurk/iitc-plugins/master/dist/portal-highlighter-uniques-opacity.user.js)]
 
 Use stroke and fill opacity to denote player's unique visits and captures. Uses NIA intel visits/captures data.

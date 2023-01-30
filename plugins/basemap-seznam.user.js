@@ -2,7 +2,7 @@
 // @id             iitc-plugin-basemap-seznam@xificurk
 // @name           IITC plugin: Seznam map tiles
 // @category       Map Tiles
-// @version        0.1.3.@@DATETIMEVERSION@@
+// @version        0.2.0.@@DATETIMEVERSION@@
 // @namespace      https://github.com/xificurk/iitc-plugins
 // @updateURL      @@UPDATEURL@@
 // @downloadURL    @@DOWNLOADURL@@
@@ -27,24 +27,7 @@
 
 
 var setup = function() {
-  var attribution = '<a href="https://mapy.cz"><img src="https://mapy.cz/img/logo-small.svg"/></a>© Seznam.cz,a.s, © Přispěvatelé <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, © NASA';
-
-  var baseLayer = new L.TileLayer('https://mapserver.mapy.cz/base-m/{z}-{x}-{y}.png', {
-    attribution: attribution,
-    subdomains: '1234',
-    maxNativeZoom: 18,
-    maxZoom: 22
-  });
-
-  var hikingLayer = new L.TileLayer('https://mapserver.mapy.cz/turist-m/{z}-{x}-{y}.png', {
-    attribution: attribution,
-    subdomains: '1234',
-    maxNativeZoom: 18,
-    maxZoom: 22
-  });
-
-  layerChooser.addBaseLayer(baseLayer, 'Mapy.cz základní');
-  layerChooser.addBaseLayer(hikingLayer, 'Mapy.cz cykloturist.');
+  console.error('Seznam map tiles are no longer publicly available - you should remove the plugin.');
 }
 
 //PLUGIN END //////////////////////////////////////////////////////////
